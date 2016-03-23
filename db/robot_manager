@@ -61,4 +61,12 @@ robots:
   birthday: 2015-05-20
   date_hired: 2015-10-12
   department: Sports & Toys
-total: 8
+- id: 9
+  name: 4-LOM
+  city: New Hanna
+  state: California
+  avatar: https://robohash.org/eiusfuganon.png?size=300x300&set=set1
+  birthday: 2014-12-07
+  date_hired: 2015-06-28
+  department: Shoes
+total: 9

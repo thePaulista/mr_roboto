@@ -21,7 +21,7 @@ class RobotManager
                              "state"      => Faker::Address.state,
                              "avatar"     => Faker::Avatar.image,
                              "birthday"   => Faker::Date.backward(500),
-                             "date_hired" =>  Faker::Date.backward(300),
+                             "date_hired" => Faker::Date.backward(300),
                              "department" => Faker::Commerce.department
                             }
     end
@@ -38,16 +38,16 @@ class RobotManager
   end
 
   def raw_robot
-    raw_robots.find {|robot| robot["id"] == id }
+    raw_robots.find {|robot| robot["id"] == id.to_i }
   end
 
   def find(id)
-    Robot.new(raw_robot(id))
+    Robot.new(raw_robot(id.to_i))
   end
 
   def update(id, robot)
     database.transaction do
-      target = database["robots"].find { |data| data["id"] == id }
+      target = database["robots"].find { |data| data["id"] == id.to_i }
       target["name"]           = robot[:name]
       target["city"]           = robot[:city]
       target["state"]          = robot[:state]
