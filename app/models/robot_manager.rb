@@ -9,15 +9,6 @@ class RobotManager
     @database = database
   end
 
-  def dream_bot
-    robot_hash {name: Faker::StarWars.droids,
-                city: Faker::City.city,
-                state: Faker::State.state,
-                avatar: Faker::Avatar.avatar,
-                birthday: Faker::Time.between(10000.days.ago, Time.now, :all),
-                date_hired: Faker::Date.between(30.days.ago, Date.today)
-                department: Faker::Commerce.department }
-  end
 
   def create(robot)
     database.transaction do
@@ -25,15 +16,14 @@ class RobotManager
       database['total'] ||= 0
       database['total'] += 1
       database['robots'] << {"id"         => database["total"],
-                             "name"       => database["name"],
-                             "city"       => database["city"],
-                             "state"      => database["state"],
-                             "avatar"     => database["avatar"],
-                             "birthday"   => database["birthday"],
-                             "date_hired" => database["date_hired"],
-                             "department" => database["department"]
+                             "name"       => Faker::StarWars.droid,
+                             "city"       => Faker::Address.city,
+                             "state"      => Faker::Address.state,
+                             "avatar"     => Faker::Avatar.image,
+                             "birthday"   => Faker::Date.backward(500),
+                             "date_hired" =>  Faker::Date.backward(300),
+                             "department" => Faker::Commerce.department
                             }
-
     end
   end
 
