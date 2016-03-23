@@ -60,7 +60,7 @@ class RobotManager
 
   def delete(id)
     database.transaction do
-      database["tasks"].delete_if { |robot| robot["id"] == id.to_i }
+      database["robots"].delete_if { |robot| robot["id"] == id.to_i }
     end
   end
 

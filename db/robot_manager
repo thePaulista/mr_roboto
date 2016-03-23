@@ -69,4 +69,28 @@ robots:
   birthday: 2014-12-07
   date_hired: 2015-06-28
   department: Shoes
-total: 9
+- id: 10
+  name: BB-8
+  city: South Estelleton
+  state: Montana
+  avatar: https://robohash.org/idautemaut.png?size=300x300&set=set1
+  birthday: 2016-01-27
+  date_hired: 2016-01-20
+  department: Music
+- id: 11
+  name: GH-7
+  city: Rebatown
+  state: Arkansas
+  avatar: https://robohash.org/nonvoluptateratione.png?size=300x300&set=set1
+  birthday: 2015-09-13
+  date_hired: 2015-06-29
+  department: Sports & Garden
+- id: 12
+  name: 2-1B
+  city: Ryanfurt
+  state: Tennessee
+  avatar: https://robohash.org/quisquamreprehenderitut.png?size=300x300&set=set1
+  birthday: 2015-03-21
+  date_hired: 2015-09-05
+  department: Home, Toys & Garden
+total: 12
