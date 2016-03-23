@@ -1,5 +1,5 @@
 require 'yaml/store'
-#require 'faker'
+require 'faker'
 require_relative "robot"
 
 class RobotManager
@@ -7,6 +7,16 @@ class RobotManager
 
   def initialize(database)
     @database = database
+  end
+
+  def dream_bot
+    robot_hash {name: Faker::StarWars.droids,
+                city: Faker::City.city,
+                state: Faker::State.state,
+                avatar: Faker::Avatar.avatar,
+                birthday: Faker::Time.between(10000.days.ago, Time.now, :all),
+                date_hired: Faker::Date.between(30.days.ago, Date.today)
+                department: Faker::Commerce.department }
   end
 
   def create(robot)
