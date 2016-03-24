@@ -18,6 +18,7 @@ class RobotManagerTest < Minitest::Test
   end
 
   def test_it_can_find_a_robot
+    skip
     create_robots(3)
 
     robot = robot_manager.all.last
@@ -34,11 +35,24 @@ class RobotManagerTest < Minitest::Test
   end
 
   def test_it_can_update_a_robot
+  skip
+   create_robots(3)
 
-skip
+   robot_num = robot_manager.all.last.id
+   robot_manager.update({"name" => "Tron X"}, robot_num)
+   updated = robot_manager.find(3)
+   assert_equal "Tron 3", updated.name
   end
-  def test_it_can_delete_a_robot
 
-skip
+  def test_it_can_delete_a_robot
+    skip
+
+    create_robots(3)
+    factory = robot_manager.all
+    assert_equal 3, factory.count
+
+    robot_manager.delete(factory.last)
+    factory_recount = robot_manager.all
+    assert_equal 2, factory_recount.count
   end
 end
