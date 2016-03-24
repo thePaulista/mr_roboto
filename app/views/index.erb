@@ -1,6 +1,9 @@
-
+<h1>Available Robots</h1>
 <% @robots.each do |robot| %>
+
+  <img src="<%=robot.avatar %>"> 
   <h3>(<%= robot.id %>) <a href="/robots/<%=robot.id %>"><%=robot.name %></a></h3>
+
   <a href="/robots/<%= robot.id %>/edit" class="btn btn-primary btn-sm">Recreate</a>
   <br> 
   <br> 
@@ -9,6 +12,5 @@
     <input type="submit" class="btn btn-primary btn-sm" value="JunkYard"/>
   </form>
 <% end %>
-<br>
 <br>
 <a href="/" class="btn btn-primary btn-lg">Back to SkyNet</a>

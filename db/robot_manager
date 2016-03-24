@@ -41,4 +41,20 @@ robots:
   birthdate: 2015-03-15
   date_hired: 2016-01-12
   department: Games & Electronics
-total: 15
+- id: 16
+  name: 327-T
+  city: West Abigail
+  state: Tennessee
+  avatar: https://robohash.org/delenitivoluptatumvero.png?size=300x300&set=set1
+  birthdate: 2015-10-26
+  date_hired: 2016-03-16
+  department: Sports
+- id: 17
+  name: B2-RP
+  city: Watsicafurt
+  state: Idaho
+  avatar: https://robohash.org/velitdistinctiosapiente.png?size=300x300&set=set1
+  birthdate: 2015-06-23
+  date_hired: 2016-03-18
+  department: Health
+total: 17
