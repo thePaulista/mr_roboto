@@ -20,4 +20,18 @@ module TestHelper
     @database = YAML::Store.new("db/robot_manager_test")
     @robot_manager ||= RobotManager.new(database)
   end
+
+  def create_robots(num)
+    num.times do |i|
+      robot_manager.create({
+        name: "Tron #{i + 1}",
+        city: "Denver#{i + 1}",
+        state: "CO#{i+1}",
+        avatar: "avatar#{i + 1}",
+        birthday:"0#{i+1}/15",
+        date_hired: "0#{ i + 1 }/15",
+        department: "A#{i + 1}"
+      })
+    end
+  end
 end

@@ -19,7 +19,7 @@ class RobotManager
                              "city"       => Faker::Address.city,
                              "state"      => Faker::Address.state,
                              "avatar"     => Faker::Avatar.image,
-                             "birthdate"   => Faker::Date.backward(500),
+                             "birthdate"  => Faker::Date.backward(500),
                              "date_hired" => Faker::Date.backward(300),
                              "department" => Faker::Commerce.department
                             }
@@ -46,7 +46,7 @@ class RobotManager
 
   def update(id, robot)
     database.transaction do
-      target = database["robots"].find { |data| data["id"] == id}
+      target = database["robots"].find { |data| data["id"] == id.to_i}
       target["name"]           = robot[:name]
       target["city"]           = robot[:city]
       target["state"]          = robot[:state]

@@ -1,13 +1,14 @@
 ---
 robots:
 - id: 10
-  name: BB-8
+  name: BB-10
   city: South Estelleton
-  state: Montana
+  state: Mont
   avatar: https://robohash.org/idautemaut.png?size=300x300&set=set1
   birthday: 2016-01-27
-  date_hired: 2016-01-20
+  date_hired: '2016-01-20'
   department: Music
+  birthdate: ''
 - id: 11
   name: GH-7
   city: Rebatown
@@ -24,12 +25,20 @@ robots:
   birthday: 2015-03-21
   date_hired: 2015-09-05
   department: Home, Toys & Garden
-- id: 13
-  name: C-3PO
-  city: West Gretchenshire
-  state: Wisconsin
-  avatar: https://robohash.org/asperioresexcepturiiusto.png?size=300x300&set=set1
-  birthdate: 2015-11-14
-  date_hired: 2015-08-24
-  department: Games & Baby
-total: 13
+- id: 14
+  name: R2-D2
+  city: South Aldaside
+  state: Minnesota
+  avatar: https://robohash.org/voluptaserrorquaerat.png?size=300x300&set=set1
+  birthdate: '2014-12-17'
+  date_hired: '2016-02-27'
+  department: Beauty & Health
+- id: 15
+  name: BB-8
+  city: Armanihaven
+  state: New Hampshire
+  avatar: https://robohash.org/asapienteminima.png?size=300x300&set=set1
+  birthdate: 2015-03-15
+  date_hired: 2016-01-12
+  department: Games & Electronics
+total: 15

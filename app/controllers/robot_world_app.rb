@@ -29,8 +29,10 @@ class RobotWorldApp < Sinatra::Base
   end
 
   put '/robots/:id' do |id|
-    robot_manager.update(params[:robot], id)
-    redirect '/robots/#{id}'
+    id = id.to_i
+    robot_manager.update(id, params[:robot])
+    @robot = robot_manager.find(id)
+    redirect "/robots/#{@robot.id}"
   end
 
   delete "/robots/:id" do |id|
