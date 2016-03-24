@@ -1,5 +1,5 @@
 
-<h1>Edit <%= @robot.name%></h1>
+<h1>Recreate <%= @robot.name%></h1>
 
 <form action="/robots/<%= @robot.id %>" method="post">
   <input type="hidden" name="_method" value="put">
@@ -16,14 +16,15 @@
   <label for="avatar">Avatar:</label><br>
   <input id="avatar" type="text" name="robot[avatar]"  value="<%= @robot.avatar %>"><br>
 
-  <label for="birthday">Birthday:</label><br>
-  <input id="birthday" type="date" name="robot[birthday]" value="<%= @robot.birthday %>"><br>
+  <label for="birthdate">Birthday:</label><br>
+  <input id="birthdate" type="date" name="robot[birthdate]" value="<%= @robot.birthdate%>"><br>
 
   <label for="date-hired">Date Hired:</label><br>
   <input id="date-hired" type="date" name="robot[date_hired]" value="<%= @robot.date_hired %>"><br>
 
   <label for="department">Department:</label><br>
   <input id="department" type="text" name="robot[department]"  value="<%= @robot.department %>"><br>
-
-  <input type="submit" value="Edit Robot">
+  <br>
+  <br>
+  <input type="submit" class="btn btn-warning btn-md" value="Recreate Your Robot">
 </form>

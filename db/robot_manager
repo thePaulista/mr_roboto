@@ -1,74 +1,5 @@
 ---
 robots:
-- id: 1
-  name: 
-  city: 
-  state: 
-  avatar: 
-  birthday: 
-  date_hired: 
-  department: 
-- id: 2
-  name: 
-  city: 
-  state: 
-  avatar: 
-  birthday: 
-  date_hired: 
-  department: 
-- id: 3
-  name: Mrs. Jackeline Fahey
-  city: 
-  state: 
-  avatar: 
-  birthday: 
-  date_hired: 
-  department: 
-- id: 4
-  name: 
-  city: 
-  state: 
-  avatar: 
-  birthday: 
-  date_hired: 
-  department: 
-- id: 5
-  city: West Feltonburgh
-  state: Maryland
-  avatar: https://robohash.org/esteosnesciunt.png?size=300x300&set=set1
-  birthday: 2015-05-04
-  date_hired: 2015-08-13
-  department: Shoes
-- id: 6
-  city: Gracieton
-  state: Maine
-  avatar: https://robohash.org/harumetillum.png?size=300x300&set=set1
-  birthday: 2015-03-30
-  date_hired: 2015-08-16
-  department: Music
-- id: 7
-  city: Lake Dejon
-  state: West Virginia
-  avatar: https://robohash.org/corruptinemoqui.png?size=300x300&set=set1
-  birthday: 2016-02-19
-  date_hired: 2016-03-01
-  department: Home
-- id: 8
-  name: BB-8
-  city: Deanville
-  state: Iowa
-  avatar: https://robohash.org/quisquamnobisex.png?size=300x300&set=set1
-  birthday: 2015-05-20
-  date_hired: 2015-10-12
-  department: Sports & Toys
-- id: 9
-  name: 4-LOM
-  city: New Hanna
-  state: California
-  avatar: https://robohash.org/eiusfuganon.png?size=300x300&set=set1
-  birthday: 2014-12-07
-  date_hired: 2015-06-28
-  department: Shoes
 - id: 10
   name: BB-8
   city: South Estelleton
@@ -93,4 +24,12 @@ robots:
   birthday: 2015-03-21
   date_hired: 2015-09-05
   department: Home, Toys & Garden
-total: 12
+- id: 13
+  name: C-3PO
+  city: West Gretchenshire
+  state: Wisconsin
+  avatar: https://robohash.org/asperioresexcepturiiusto.png?size=300x300&set=set1
+  birthdate: 2015-11-14
+  date_hired: 2015-08-24
+  department: Games & Baby
+total: 13

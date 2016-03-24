@@ -1,6 +1,5 @@
 require 'yaml/store'
 require 'faker'
-require_relative "robot"
 
 class RobotManager
   attr_reader :database
@@ -20,7 +19,7 @@ class RobotManager
                              "city"       => Faker::Address.city,
                              "state"      => Faker::Address.state,
                              "avatar"     => Faker::Avatar.image,
-                             "birthday"   => Faker::Date.backward(500),
+                             "birthdate"   => Faker::Date.backward(500),
                              "date_hired" => Faker::Date.backward(300),
                              "department" => Faker::Commerce.department
                             }
@@ -37,22 +36,22 @@ class RobotManager
     raw_robots.map { |data| Robot.new(data) }
   end
 
-  def raw_robot
-    raw_robots.find {|robot| robot["id"] == id.to_i }
+  def raw_robot(id)
+    raw_robots.find { |robot| robot["id"] == id }
   end
 
   def find(id)
-    Robot.new(raw_robot(id.to_i))
+    Robot.new(raw_robot(id))
   end
 
   def update(id, robot)
     database.transaction do
-      target = database["robots"].find { |data| data["id"] == id.to_i }
+      target = database["robots"].find { |data| data["id"] == id}
       target["name"]           = robot[:name]
       target["city"]           = robot[:city]
       target["state"]          = robot[:state]
       target["avatar"]         = robot[:avatar]
-      target["birthday"]       = robot[:birthday]
+      target["birthdate"]      = robot[:birthdate]
       target["date_hired"]     = robot[:date_hired]
       target["department"]     = robot[:department]
     end
