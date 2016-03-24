@@ -29,9 +29,8 @@ class RobotWorldApp < Sinatra::Base
   end
 
   put '/robots/:id' do |id|
-    id = id.to_i
-    robot_manager.update(id, params[:robot])
-    @robot = robot_manager.find(id)
+    robot_manager.update(id.to_i, params[:robot])
+    @robot = robot_manager.find(id.to_i)
     redirect "/robots/#{@robot.id}"
   end
 
@@ -45,7 +44,11 @@ class RobotWorldApp < Sinatra::Base
   end
 
   def robot_manager
-    database = YAML::Store.new('db/robot_manager')
+    if ENV["RACK_ENV"] == "test"
+      database = Sequel.sqlite("db/robot_manager_test.sqlite3")
+    else
+      database = Sequel.sqlite("db/robot_manager_development.sqlite3")
+    end
     @robot_manager ||= RobotManager.new(database)
   end
 end

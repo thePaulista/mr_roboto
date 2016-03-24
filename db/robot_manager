@@ -1,14 +1,5 @@
 ---
 robots:
-- id: 10
-  name: BB-10
-  city: South Estelleton
-  state: Mont
-  avatar: https://robohash.org/idautemaut.png?size=300x300&set=set1
-  birthday: 2016-01-27
-  date_hired: '2016-01-20'
-  department: Music
-  birthdate: ''
 - id: 11
   name: GH-7
   city: Rebatown

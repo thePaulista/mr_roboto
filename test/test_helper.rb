@@ -17,7 +17,7 @@ module TestHelper
   end
 
   def robot_manager
-    @database = YAML::Store.new("db/robot_manager_test")
+    database = Sequel.sqlite("db/robot_manager_test.sqlite3")
     @robot_manager ||= RobotManager.new(database)
   end
 
@@ -28,7 +28,7 @@ module TestHelper
         city: "Denver#{i + 1}",
         state: "CO#{i+1}",
         avatar: "avatar#{i + 1}",
-        birthday:"0#{i+1}/15",
+        birthdate:"0#{i+1}/15",
         date_hired: "0#{ i + 1 }/15",
         department: "A#{i + 1}"
       })
