@@ -45,9 +45,9 @@ class RobotWorldApp < Sinatra::Base
 
   def robot_manager
     if ENV["RACK_ENV"] == "test"
-      database = Sequel.sqlite("db/robot_manager_test.sqlite3")
+      database = Sequel.sqlite("db/robot_manager_test.sqlite")
     else
-      database = Sequel.sqlite("db/robot_manager_development.sqlite3")
+      database = Sequel.sqlite("db/robot_manager_development.sqlite")
     end
     @robot_manager ||= RobotManager.new(database)
   end

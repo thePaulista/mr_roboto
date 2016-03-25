@@ -17,7 +17,7 @@ module TestHelper
   end
 
   def robot_manager
-    database = Sequel.sqlite("db/robot_manager_test.sqlite3")
+    database = Sequel.sqlite("db/robot_manager_test.sqlite")
     @robot_manager ||= RobotManager.new(database)
   end
 
