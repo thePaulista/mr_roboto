@@ -13,7 +13,7 @@ class RobotManager
 
   def create(robot)
     robot =  {
-      "name" => Faker::StarWars.droid,
+      "name"       => Faker::StarWars.droid,
       "city"       => Faker::Address.city,
       "state"      => Faker::Address.state,
       "avatar"     => Faker::Avatar.image,
@@ -22,7 +22,7 @@ class RobotManager
       "department" => Faker::Commerce.department
     }
 
-    dataset.insert(robot)
+  dataset.insert(robot)
   end
 
   def all
@@ -31,7 +31,7 @@ class RobotManager
 
   def find(id)
     data = dataset.where(:id => id).to_a.first
-    Task.new(data)
+    Robot.new(data)
   end
 
   def update(id, robot)
