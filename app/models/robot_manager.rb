@@ -11,7 +11,7 @@ class RobotManager
     database.from(:robots)
   end
 
-  def terminator(robot)
+  def create(robot)
     robot =  {
       "name" => Faker::StarWars.droid,
       "city"       => Faker::Address.city,
@@ -21,10 +21,8 @@ class RobotManager
       "date_hired" => Faker::Time.between(DateTime.now - 5, DateTime.now),
       "department" => Faker::Commerce.department
     }
-  end
 
-  def create(robot)
-    dataset.insert(terminator(robot))
+    dataset.insert(robot)
   end
 
   def all
@@ -43,11 +41,6 @@ class RobotManager
   def delete(id)
     dataset.where(:id => id).delete
   end
-
-  def delete_all
-    dataset.delete
-  end
-
 end
 
 

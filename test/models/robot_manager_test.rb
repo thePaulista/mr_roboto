@@ -5,9 +5,9 @@ class RobotManagerTest < Minitest::Test
 
   def test_it_can_create_a_robot
     create_robots(1)
+
     robot = robot_manager.all.last
 
-    assert_equal 1, robot.id
     assert_equal "Tron 1", robot.name
     assert_equal "Denver1", robot.city
     assert_equal "CO 1", robot.state

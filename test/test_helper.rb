@@ -5,19 +5,26 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'capybara/dsl'
 require 'tilt/erb'
+require 'database_cleaner'
 
 Capybara.app = RobotWorldApp
 Capybara.save_and_open_page_path = "tmp/capybara"
 
+DatabaseCleaner[:sequel, {:connection => Sequel.sqlite("db/robot_manager_test.sqlite3")}].strategy = :truncation
 
 module TestHelper
+  def setup
+    DatabaseCleaner.start
+    super
+  end
+
   def teardown
-    robot_manager.delete_all
+    DatabaseCleaner.clean
     super
   end
 
   def robot_manager
-    database = Sequel.sqlite("db/robot_manager_test.sqlite")
+    database = Sequel.sqlite("db/robot_manager_test.sqlite3")
     @robot_manager ||= RobotManager.new(database)
   end
 
