@@ -9,7 +9,7 @@ class Robot
               :department
 
   def initialize(data)
-    @id         = data["id"]
+    @id         = data[:id]
     @name       = data["name"]
     @city       = data["city"]
     @state      = data["state"]

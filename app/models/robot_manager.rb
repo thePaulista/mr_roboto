@@ -1,4 +1,3 @@
-require 'yaml/store'
 require 'faker'
 
 class RobotManager
@@ -12,20 +11,20 @@ class RobotManager
     database.from(:robots)
   end
 
-  def faker_robot(robot)
+  def terminator(robot)
     robot =  {
       "name" => Faker::StarWars.droid,
       "city"       => Faker::Address.city,
       "state"      => Faker::Address.state,
       "avatar"     => Faker::Avatar.image,
       "birthdate"  => Faker::Date.backward(500),
-      "date_hired" => Faker::Date.backward(300),
+      "date_hired" => Faker::Time.between(DateTime.now - 5, DateTime.now),
       "department" => Faker::Commerce.department
     }
   end
 
   def create(robot)
-    dataset.insert(faker_robot(robot))
+    dataset.insert(terminator(robot))
   end
 
   def all
@@ -48,6 +47,7 @@ class RobotManager
   def delete_all
     dataset.delete
   end
+
 end
 
 
