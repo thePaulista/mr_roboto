@@ -30,7 +30,9 @@ class RobotManager
   end
 
   def find(id)
+    require "pry"; binding.pry
     data = dataset.where(:id => id).to_a.first
+
     Robot.new(data)
   end
 

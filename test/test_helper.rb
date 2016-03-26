@@ -28,18 +28,19 @@ module TestHelper
     @robot_manager ||= RobotManager.new(database)
   end
 
-  def create_robots(num)
+  def create_robot(num)
     num.times do |i|
       robot_manager.create({
-        name: "Tron #{i + 1}",
-        city: "Denver#{i + 1}",
-        state: "CO#{i+1}",
-        avatar: "avatar#{i + 1}",
-        birthdate:"0#{i+1}/15",
-        date_hired: "0#{ i + 1 }/15",
-        department: "A#{i + 1}"
+        :name       => Faker::StarWars.droid,
+        :city       => Faker::Address.city,
+        :state      => Faker::Address.state,
+        :avatar     => Faker::Avatar.image,
+        :birthdate  => Faker::Date.backward(500),
+        :date_hired => Faker::Time.between(DateTime.now - 1, DateTime.now),
+        :department => Faker::Commerce.department
+
       })
     end
   end
-end
+ end
 
