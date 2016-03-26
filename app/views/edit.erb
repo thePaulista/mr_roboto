@@ -1,14 +1,16 @@
 
-<h1>Recreate <%= @robot.name%></h1>
+<h1 class="text-center">Recreate <%= @robot.name%></h1>
+<div class="pull-right">
+  <img src="<%= @robot.avatar %>">
+</div>
+<form class ="form-horizontal" role="form">
+  <form action="/robots/<%= @robot.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
 
-<form action="/robots/<%= @robot.id %>" method="post">
-  <input type="hidden" name="_method" value="put">
+    <input id="name" type="text" name="robot[name]" value="<%= @robot.name %>"><br>
 
-  <label for="name">Name:</label><br>
-  <input id="name" type="text" name="robot[name]" value="<%= @robot.name %>"><br>
-
-  <label for="city">City:</label><br>
-  <input id="city" type="text" name="robot[city]" value="<%= @robot.city %>"><br>
+    <label for="city">City:</label><br>
+    <input id="city" type="text" name="robot[city]" value="<%= @robot.city %>"><br>
 
   <label for="state">State:</label><br>
   <input id="state" type="text" name="robot[state]" value="<%= @robot.state %>"><br>
@@ -28,3 +30,5 @@
   <br>
   <input type="submit" class="btn btn-warning btn-md" value="Recreate Your Robot">
 </form>
+</form>
+

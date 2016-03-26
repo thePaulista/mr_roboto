@@ -1,16 +1,28 @@
 <h1>Available Robots</h1>
+<table class="table table-striped">
 <% @robots.each do |robot| %>
+  <thead>
+    <tr>
+      <th>Robot ID </th>
+      <th>Avatar </th>
+      <th>Robot Name  </th>
+    </tr>
+  <thead> 
 
-  <img src="<%=robot.avatar %>"> 
-  <h3>(<%= robot.id %>) <a href="/robots/<%=robot.id %>"><%=robot.name %></a></h3>
-
-  <a href="/robots/<%= robot.id %>/edit" class="btn btn-primary btn-sm">Recreate</a>
-  <br> 
-  <br> 
+    <tbody>
+    <tr>
+      <td><%= robot.id %></td>
+      <td><img src="<%=robot.avatar %>"></td> 
+      <td><h3> <a href="/robots/<%=robot.id %>"><%=robot.name %></a></h3></td>
+      <td> <a href="/robots/<%= robot.id %>/edit" class="btn btn-warning btn-sm">Recreate</a></td>
   <form action="/robots/<%= robot.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <input type="submit" class="btn btn-primary btn-sm" value="JunkYard"/>
+    <td> <input type="submit" class="btn btn-warning btn-sm" value="JunkYard"/></td>
   </form>
+  </tr>
+    </tbody>  
+
 <% end %>
+</table>
 <br>
-<a href="/" class="btn btn-primary btn-md">Back to SkyNet</a>
+<a href="/" class="btn btn-warning btn-md">Back to SkyNet</a>
