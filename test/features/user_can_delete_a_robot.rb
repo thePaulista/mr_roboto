@@ -1,10 +1,10 @@
-)require_relative '../test_helper'
+require_relative '../test_helper'
 
 class UserCanDeleteARobot < Minitest::Test
   include Capybara::DSL
   include TestHelper
 
-  def test_robot_can_be_created_with_correct_attributes
+  def test_user_can_create_robot_with_correct_attributes
     create_robot(1)
     visit '/robots'
 
